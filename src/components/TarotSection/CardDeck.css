@@ -1,0 +1,215 @@
+.card-deck {
+  text-align: center;
+  padding: 40px 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.deck-title {
+  margin-bottom: 40px;
+}
+
+.deck-title h2 {
+  font-size: 2.2rem;
+  color: var(--accent-gold);
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.deck-title p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+.cards-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin: 40px 0;
+}
+
+.tarot-card {
+  position: absolute;
+  width: 120px;
+  height: 180px;
+  cursor: pointer;
+  transition: var(--transition-bounce);
+  transform-style: preserve-3d;
+}
+
+.tarot-card:hover:not(.disabled) {
+  transform: translateY(-10px) scale(1.05);
+  filter: drop-shadow(0 10px 30px rgba(255, 215, 0, 0.4));
+}
+
+.tarot-card.animating {
+  animation: cardShuffle 1s ease-in-out;
+}
+
+.tarot-card.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(0.7);
+}
+
+@keyframes cardShuffle {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(10deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(-10deg) scale(1.1);
+  }
+  75% {
+    transform: rotate(5deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+.card-back {
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-card);
+  border: 2px solid var(--accent-gold);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-back::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 215, 0, 0.1) 0%,
+    transparent 70%
+  );
+}
+
+.card-pattern {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.pattern-circle {
+  font-size: 1.5rem;
+  color: var(--accent-gold);
+  animation: sparkle 3s ease-in-out infinite;
+}
+
+.pattern-circle:nth-child(2) {
+  animation-delay: -1s;
+}
+
+.pattern-text {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.deck-instructions {
+  margin-top: 30px;
+}
+
+.deck-instructions p {
+  font-size: 1.1rem;
+  color: var(--accent-gold);
+  animation: float 2s ease-in-out infinite;
+}
+
+.drawing-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.sparkles {
+  font-size: 1.3rem;
+  color: var(--accent-gold);
+  animation: sparkle 0.5s ease-in-out infinite;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .card-deck {
+    padding: 30px 16px;
+  }
+
+  .deck-title h2 {
+    font-size: 1.8rem;
+  }
+
+  .deck-title p {
+    font-size: 1rem;
+  }
+
+  .cards-container {
+    height: 160px;
+    margin: 30px 0;
+  }
+
+  .tarot-card {
+    width: 100px;
+    height: 150px;
+  }
+
+  .pattern-text {
+    font-size: 0.8rem;
+  }
+
+  .deck-instructions p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-deck {
+    padding: 20px 12px;
+  }
+
+  .deck-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .cards-container {
+    height: 140px;
+  }
+
+  .tarot-card {
+    width: 80px;
+    height: 120px;
+  }
+
+  .pattern-circle {
+    font-size: 1.2rem;
+  }
+
+  .pattern-text {
+    font-size: 0.7rem;
+  }
+}

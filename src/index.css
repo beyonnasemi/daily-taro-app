@@ -1,0 +1,128 @@
+/* 전역 CSS 변수 */
+:root {
+  /* 색상 팔레트 */
+  --primary-bg: #0f0f23;
+  --secondary-bg: #1a1a2e;
+  --card-bg: #16213e;
+  --accent-gold: #ffd700;
+  --accent-purple: #6a4c93;
+  --text-light: #ffffff;
+  --text-muted: #b8b8b8;
+  --border-color: #2d3748;
+
+  /* 그라디언트 */
+  --gradient-main: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  --gradient-card: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+  --gradient-gold: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+
+  /* 애니메이션 */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* 그림자 */
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 12px 48px rgba(255, 215, 0, 0.2);
+  --shadow-inner: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* 리셋 및 기본 설정 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  background: var(--gradient-main);
+  color: var(--text-light);
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* 스크롤바 스타일링 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-gold);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e6c200;
+}
+
+/* 선택 영역 스타일 */
+::selection {
+  background: var(--accent-gold);
+  color: var(--primary-bg);
+}
+
+/* 기본 버튼 스타일 */
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  transition: var(--transition-smooth);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* 애니메이션 정의 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+  }
+}
+
+/* 반응형 타이포그래피 */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
