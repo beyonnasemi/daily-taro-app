@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.cbcfb71b.css",
-    "main.js": "/static/js/main.fcf9c31f.js",
-    "index.html": "/index.html",
-    "main.cbcfb71b.css.map": "/static/css/main.cbcfb71b.css.map",
-    "main.fcf9c31f.js.map": "/static/js/main.fcf9c31f.js.map"
+    "main.css": "/daily-taro-app/static/css/main.cbcfb71b.css",
+    "main.js": "/daily-taro-app/static/js/main.fcf9c31f.js",
+    "index.html": "/daily-taro-app/index.html",
+    "main.cbcfb71b.css.map": "/daily-taro-app/static/css/main.cbcfb71b.css.map",
+    "main.fcf9c31f.js.map": "/daily-taro-app/static/js/main.fcf9c31f.js.map"
   },
   "entrypoints": [
     "static/css/main.cbcfb71b.css",
